@@ -45,20 +45,20 @@ G1_GC_REASON                    %{GC_JVM_UPTIME}(\s+\[(?<gc_action>(\w+\s+\w+))\
 #    [GC Worker Other (ms): Min: 0.0, Avg: 0.1, Max: 0.1, Diff: 0.1, Sum: 0.5]
 #    [GC Worker Total (ms): Min: 26.1, Avg: 26.2, Max: 26.2, Diff: 0.1, Sum: 261.6]
 #    [GC Worker End (ms): Min: 599288913.6, Avg: 599288913.6, Max: 599288913.6, Diff: 0.1]
-G1_WORKER_STATS                 (\s+\[Parallel\s+Time:\s+(?<gc_parallel_time>(\d+\.\d+))\s+ms,\s+GC\s+Workers:\s+(?<g1_workers>(\d+))\]\n)
-G1_WORKER_START_STATS           (\s+\[GC\s+Worker\s+Start\s+\(ms\):\s+Min:\s+(?<g1_worker_start.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_start.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_start.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_start.diff>(\d+\.\d+))\]\n)
-G1_EXT_ROOT_SCAN_STATS          (\s+\[Ext\s+Root\s+Scanning\s+\(ms\):\s+Min:\s+(?<g1_ext_root_scan.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_ext_root_scan.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_ext_root_scan.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_ext_root_scan.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_ext_root_scan.sum>(\d+\.\d+))\]\n)
-G1_EXT_ROOT_MARK_STATS          (\s+\[Code\s+Root\s+Marking\s+\(ms\):\s+Min:\s+(?<g1_ext_root_mark.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_ext_root_mark.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_ext_root_mark.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_ext_root_mark.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_ext_root_mark.sum>(\d+\.\d+))\]\n)
-G1_SATB_FILTER_STATS            (\s+\[SATB\s+Filtering\s+\(ms\):\s+Min:\s+(?<g1_satb_filter.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_satb_filter.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_satb_filter.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_satb_filter.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_satb_filter.sum>(\d+\.\d+))\]\n)
-G1_UPDATE_RS_STATS              (\s+\[Update\s+RS\s+\(ms\):\s+Min:\s+(?<g1_update_rs.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_update_rs.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_update_rs.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_update_rs.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_update_rs.sum>(\d+\.\d+))\]\n)
-G1_PROCESS_BUFFER_STATS         (\s+\[Processed\s+Buffers:\s+Min:\s+(?<g1_update_rs.updated_process_buffer.min>(\d+)),\s+Avg:\s+(?<g1_update_rs.updated_process_buffer.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_update_rs.updated_process_buffer.max>(\d+)),\s+Diff:\s+(?<g1_update_rs.updated_process_buffer.diff>(\d+)),\s+Sum:\s+(?<g1_update_rs.updated_process_buffer.sum>(\d+))\]\n)
-G1_SCAN_RS_STATS                (\s+\[Scan\s+RS\s+\(ms\):\s+Min:\s+(?<g1_scan_rs.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_scan_rs.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_scan_rs.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_scan_rs.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_scan_rs.sum>(\d+\.\d+))\]\n)
-G1_CODE_ROOT_SCAN_STATS         (\s+\[Code\s+Root\s+Scanning\s+\(ms\):\s+Min:\s+(?<g1_code_root_scan.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_code_root_scan.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_code_root_scan.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_code_root_scan.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_code_root_scan.sum>(\d+\.\d+))\]\n)
-G1_OBJECT_COPY_STATS            (\s+\[Object\s+Copy\s+\(ms\):\s+Min:\s+(?<g1_object_copy.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_object_copy.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_object_copy.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_object_copy.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_object_copy.sum>(\d+\.\d+))\]\n)
-G1_TERMINATION_STATS            (\s+\[Termination\s+\(ms\):\s+Min:\s+(?<g1_termination.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_termination.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_termination.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_termination.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_termination.sum>(\d+\.\d+))\]\n)
-G1_WORKER_OTHER_STATS           (\s+\[GC\s+Worker\s+Other\s+\(ms\):\s+Min:\s+(?<g1_worker_other.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_other.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_other.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_other.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_worker_other.sum>(\d+\.\d+))\]\n)
-G1_WORKER_TOTAL_STATS           (\s+\[GC\s+Worker\s+Total\s+\(ms\):\s+Min:\s+(?<g1_worker_total.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_total.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_total.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_total.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_worker_total.sum>(\d+\.\d+))\]\n)
-G1_WORKER_END_STATS             (\s+\[GC\s+Worker\s+End\s+\(ms\):\s+Min:\s+(?<g1_worker_end.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_end.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_end.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_end.diff>(\d+\.\d+))\]\n)
+G1_WORKER_STATS                 (\s+\[Parallel\s+Time:\s+(?<gc_parallel_time>(\d+\.\d+))\s+ms,\s+GC\s+Workers:\s+(?<g1_workers>(\d+))\])
+G1_WORKER_START_STATS           (\s+\[GC\s+Worker\s+Start\s+\(ms\):\s+Min:\s+(?<g1_worker_start.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_start.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_start.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_start.diff>(\d+\.\d+))\])
+G1_EXT_ROOT_SCAN_STATS          (\s+\[Ext\s+Root\s+Scanning\s+\(ms\):\s+Min:\s+(?<g1_ext_root_scan.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_ext_root_scan.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_ext_root_scan.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_ext_root_scan.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_ext_root_scan.sum>(\d+\.\d+))\])
+G1_EXT_ROOT_MARK_STATS          (\s+\[Code\s+Root\s+Marking\s+\(ms\):\s+Min:\s+(?<g1_ext_root_mark.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_ext_root_mark.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_ext_root_mark.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_ext_root_mark.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_ext_root_mark.sum>(\d+\.\d+))\])
+G1_SATB_FILTER_STATS            (\s+\[SATB\s+Filtering\s+\(ms\):\s+Min:\s+(?<g1_satb_filter.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_satb_filter.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_satb_filter.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_satb_filter.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_satb_filter.sum>(\d+\.\d+))\])
+G1_UPDATE_RS_STATS              (\s+\[Update\s+RS\s+\(ms\):\s+Min:\s+(?<g1_update_rs.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_update_rs.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_update_rs.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_update_rs.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_update_rs.sum>(\d+\.\d+))\])
+G1_PROCESS_BUFFER_STATS         (\s+\[Processed\s+Buffers:\s+Min:\s+(?<g1_update_rs.updated_process_buffer.min>(\d+)),\s+Avg:\s+(?<g1_update_rs.updated_process_buffer.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_update_rs.updated_process_buffer.max>(\d+)),\s+Diff:\s+(?<g1_update_rs.updated_process_buffer.diff>(\d+)),\s+Sum:\s+(?<g1_update_rs.updated_process_buffer.sum>(\d+))\])
+G1_SCAN_RS_STATS                (\s+\[Scan\s+RS\s+\(ms\):\s+Min:\s+(?<g1_scan_rs.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_scan_rs.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_scan_rs.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_scan_rs.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_scan_rs.sum>(\d+\.\d+))\])
+G1_CODE_ROOT_SCAN_STATS         (\s+\[Code\s+Root\s+Scanning\s+\(ms\):\s+Min:\s+(?<g1_code_root_scan.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_code_root_scan.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_code_root_scan.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_code_root_scan.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_code_root_scan.sum>(\d+\.\d+))\])
+G1_OBJECT_COPY_STATS            (\s+\[Object\s+Copy\s+\(ms\):\s+Min:\s+(?<g1_object_copy.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_object_copy.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_object_copy.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_object_copy.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_object_copy.sum>(\d+\.\d+))\])
+G1_TERMINATION_STATS            (\s+\[Termination\s+\(ms\):\s+Min:\s+(?<g1_termination.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_termination.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_termination.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_termination.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_termination.sum>(\d+\.\d+))\])
+G1_WORKER_OTHER_STATS           (\s+\[GC\s+Worker\s+Other\s+\(ms\):\s+Min:\s+(?<g1_worker_other.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_other.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_other.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_other.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_worker_other.sum>(\d+\.\d+))\])
+G1_WORKER_TOTAL_STATS           (\s+\[GC\s+Worker\s+Total\s+\(ms\):\s+Min:\s+(?<g1_worker_total.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_total.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_total.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_total.diff>(\d+\.\d+)),\s+Sum:\s+(?<g1_worker_total.sum>(\d+\.\d+))\])
+G1_WORKER_END_STATS             (\s+\[GC\s+Worker\s+End\s+\(ms\):\s+Min:\s+(?<g1_worker_end.min>(\d+\.\d+)),\s+Avg:\s+(?<g1_worker_end.avg>(\d+\.\d+)),\s+Max:\s+(?<g1_worker_end.max>(\d+\.\d+)),\s+Diff:\s+(?<g1_worker_end.diff>(\d+\.\d+))\])
 G1_PARALLEL_THREADS_STATS       %{G1_WORKER_STATS}%{G1_WORKER_START_STATS}%{G1_EXT_ROOT_SCAN_STATS}%{G1_EXT_ROOT_MARK_STATS}?%{G1_SATB_FILTER_STATS}?%{G1_UPDATE_RS_STATS}%{G1_PROCESS_BUFFER_STATS}%{G1_SCAN_RS_STATS}%{G1_CODE_ROOT_SCAN_STATS}%{G1_OBJECT_COPY_STATS}%{G1_TERMINATION_STATS}%{G1_WORKER_OTHER_STATS}%{G1_WORKER_TOTAL_STATS}%{G1_WORKER_END_STATS}
 
 # G1 sequentiell Threads Young and Mixed GC
@@ -73,17 +73,17 @@ G1_PARALLEL_THREADS_STATS       %{G1_WORKER_STATS}%{G1_WORKER_START_STATS}%{G1_E
 #        [Ref Enq: 0.0 ms]
 #        [Redirty Cards: 0.2 ms]
 #        [Free CSet: 0.8 ms]
-G1_CODE_ROOT_FIXUP              (\s+\[Code\s+Root\s+Fixup:\s+(?<g1_code_root_fixup>(\d+\.\d+))\s+ms\]\n)
-G1_CODE_ROOT_MIGRATION          (\s+\[Code\s+Root\s+Migration:\s+(?<g1_code_root_migration>(\d+\.\d+))\s+ms\]\n)
-G1_CODE_ROOT_PURGE              (\s+\[Code\s+Root\s+Purge:\s+(?<g1_code_root_purge>(\d+\.\d+))\s+ms\]\n)
+G1_CODE_ROOT_FIXUP              (\s+\[Code\s+Root\s+Fixup:\s+(?<g1_code_root_fixup>(\d+\.\d+))\s+ms\])
+G1_CODE_ROOT_MIGRATION          (\s+\[Code\s+Root\s+Migration:\s+(?<g1_code_root_migration>(\d+\.\d+))\s+ms\])
+G1_CODE_ROOT_PURGE              (\s+\[Code\s+Root\s+Purge:\s+(?<g1_code_root_purge>(\d+\.\d+))\s+ms\])
 G1_CODE_ROOT_STATS              %{G1_CODE_ROOT_FIXUP}%{G1_CODE_ROOT_MIGRATION}%{G1_CODE_ROOT_PURGE}
-G1_CLEAR_CT                     (\s+\[Clear\s+CT:\s+(?<g1_clear_ct>(\d+\.\d+))\s+ms\]\n)
-G1_OTHER                        (\s+\[Other:\s+(?<g1_other_duration>(\d+\.\d+))\s+ms\]\n)
-G1_CHOOS_CSET                   (\s+\[Choose\s+CSet:\s+(?<g1_choose_cset>(\d+\.\d+))\s+ms\]\n)
-G1_REF_PROC                     (\s+\[Ref\s+Proc:\s+(?<g1_ref_proc>(\d+\.\d+))\s+ms\]\n)
-G1_REF_ENQ                      (\s+\[Ref\s+Enq:\s+(?<g1_ref_enq>(\d+\.\d+))\s+ms\]\n)
-G1_REDIRTY_CARDS                (\s+\[Redirty\s+Cards:\s+(?<g1_redirty_cards>(\d+\.\d+))\s+ms\]\n)
-G1_FREE_CSET                    (\s+\[Free\s+CSet:\s+(?<g1_free_cset>(\d+\.\d+))\s+ms\]\n)
+G1_CLEAR_CT                     (\s+\[Clear\s+CT:\s+(?<g1_clear_ct>(\d+\.\d+))\s+ms\])
+G1_OTHER                        (\s+\[Other:\s+(?<g1_other_duration>(\d+\.\d+))\s+ms\])
+G1_CHOOS_CSET                   (\s+\[Choose\s+CSet:\s+(?<g1_choose_cset>(\d+\.\d+))\s+ms\])
+G1_REF_PROC                     (\s+\[Ref\s+Proc:\s+(?<g1_ref_proc>(\d+\.\d+))\s+ms\])
+G1_REF_ENQ                      (\s+\[Ref\s+Enq:\s+(?<g1_ref_enq>(\d+\.\d+))\s+ms\])
+G1_REDIRTY_CARDS                (\s+\[Redirty\s+Cards:\s+(?<g1_redirty_cards>(\d+\.\d+))\s+ms\])
+G1_FREE_CSET                    (\s+\[Free\s+CSet:\s+(?<g1_free_cset>(\d+\.\d+))\s+ms\])
 G1_OTHER_STATS                  %{G1_OTHER}%{G1_CHOOS_CSET}%{G1_REF_PROC}%{G1_REF_ENQ}%{G1_REDIRTY_CARDS}%{G1_FREE_CSET}
 G1_SEQUENTIELL_THREADS_STATS    %{G1_CODE_ROOT_STATS}%{G1_CLEAR_CT}%{G1_OTHER_STATS}
 
